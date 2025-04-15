@@ -7,6 +7,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/contacts', function () {
+    return view('contacts');
+});
+Route::get('/diploma', function () {
+    return view('diploma');
+});
+Route::get('/recommendations', function () {
+    return view('recommendations');
+});
+Route::get('/news', function () {
+    return view('news');
+});
+Route::get('/eco', function () {
+    return view('eco');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -18,3 +34,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+require __DIR__.'/olga_calendar.php';
