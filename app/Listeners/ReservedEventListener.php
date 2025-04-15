@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Log;
 readonly class ReservedEventListener
 {
     /**
-     * Handle the event.
+     * Слушатель события ReservedEvent
      */
     public function handle(ReservedEvent $event): void
     {
