@@ -141,7 +141,7 @@
                                     <h2 class="text-xl font-semibold text-black dark:text-white">Новости</h2>
 
                                     <p class="mt-4 text-sm/relaxed">
-                                        Начните правльный образ жизни сегодня же.
+                                        Начните правильный образ жизни сегодня же.
                                     </p>
                                 </div>
 
