@@ -177,6 +177,8 @@
                     <footer class="py-16 text-center text-sm text-black dark:text-white/70">
 {{--                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})--}}
                         Контакты: телефон +7(964) 516 65 50
+                        <br>
+                        <a href="/calendar" style="color: blue;  text-decoration: underline" >Запись в календарь консультаций</a>
                     </footer>
                 </div>
             </div>
