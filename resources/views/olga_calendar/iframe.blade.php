@@ -88,7 +88,12 @@
 
             <div><textarea name="comment" rows="3" cols="40" placeholder="Пожелания"></textarea></div>
 
+            <div>
+                <p>Отправляя личные данные, Вы даете согласие на их обработку</p>
+            </div>
+
             <div><input type="submit" value="Записаться" /></div>
+
 
         </div>
         </form>
