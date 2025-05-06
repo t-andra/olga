@@ -12,13 +12,13 @@
 
 <div class="olga-calendar">
 
-    <div class="day-name" style="left:0px;top:40px">пн</div>
-    <div class="day-name" style="left:0px;top:80px">вт</div>
-    <div class="day-name" style="left:0px;top:120px">ср</div>
-    <div class="day-name" style="left:0px;top:160px">чт</div>
-    <div class="day-name" style="left:0px;top:200px">пт</div>
-    <div class="day-name" style="left:0px;top:240px">сб</div>
-    <div class="day-name" style="left:0px;top:280px">вс</div>
+    <div class="day-name" style="left:0;top:40px">пн</div>
+    <div class="day-name" style="left:0;top:80px">вт</div>
+    <div class="day-name" style="left:0;top:120px">ср</div>
+    <div class="day-name" style="left:0;top:160px">чт</div>
+    <div class="day-name" style="left:0;top:200px">пт</div>
+    <div class="day-name" style="left:0;top:240px">сб</div>
+    <div class="day-name" style="left:0;top:280px">вс</div>
 
 
     @php
