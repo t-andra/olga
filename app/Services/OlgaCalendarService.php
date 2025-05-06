@@ -2,8 +2,6 @@
 
 namespace App\Services;
 
-
-
 use App\Models\OlgaCalendarBlock;
 use App\Models\OlgaCalendarDay;
 use App\Models\OlgaCalendarSemaphore;

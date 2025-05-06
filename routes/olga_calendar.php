@@ -18,3 +18,6 @@ Route::post('/calendar/appointments', 'App\Http\Controllers\OlgaCalendar\OlgaCal
 
 Route::post('/calendar/blocked', 'App\Http\Controllers\OlgaCalendar\OlgaCalendarController@setBlocked')
     ->name('olga.calendar.blocked');
+
+Route::delete('/calendar/blocked', 'App\Http\Controllers\OlgaCalendar\OlgaCalendarController@destroyBlocked')
+    ->name('olga.calendar.blocked.delete');

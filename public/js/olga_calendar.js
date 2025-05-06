@@ -1,5 +1,5 @@
 /** *******************************************
- *  Скрип для календаря записи на прием
+ *  Скрипт для календаря записи на прием
  *
  **********************************************/
 
@@ -43,7 +43,7 @@ function onloadCalendar()
 
     const closeButtons = document.getElementsByClassName('close-button');
     for(let i=0; i<closeButtons.length; i++){  // Привязываем активным кнопкам обработчик событий
-        closeButtons[i].addEventListener('click', function(e){ this.parentNode.style.display = 'none'; pause=false;});
+        closeButtons[i].addEventListener('click', function(e){ deleteBlock(this.dataset.date); this.parentNode.style.display = 'none'; pause=false;});
     }
 
     refreshIframe();
@@ -62,6 +62,8 @@ function onclickCalendar(oneDate)
 
   const form = document.getElementById('form1');
   form.style.display = 'block';
+  const closeButton1 = document.getElementById('close-button1');
+  closeButton1.dataset.date = oneDate.dataset.date;
 
   const form1date1 = document.getElementById('form1date1');
   let d = new Date(oneDate.dataset.date);
@@ -150,6 +152,20 @@ async function setBlock(start) {
     });
 }
 
+async function deleteBlock(start) {
+    // blockDeleteUrl, _token опеределены в resources/views/olga_calendar/iframe.blade.php
+    await fetch(blockDeleteUrl, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            "_token": _token,
+            "start": start
+        }),
+    });
+}
+
 function clearAppointments()
 {
     const grid = document.getElementsByClassName('point');
@@ -173,5 +189,7 @@ function openForm2(hourStart, dateAt)
     f2.elements['date_at'].value = dateAt;
 
     form1.style.display = 'none';
+    const closeButton2 = document.getElementById('close-button2');
+    closeButton2.dataset.date = dateAt;
     form2.style.display = 'block';
 }

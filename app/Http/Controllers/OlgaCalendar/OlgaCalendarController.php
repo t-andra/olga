@@ -117,7 +117,6 @@ class OlgaCalendarController extends Controller
     public function setBlocked(Request $request): void
     {
         OlgaCalendarService::pruneBlocks();
-        OlgaCalendarService::setSemaphore();
 
         $dayId = OlgaCalendarDay::query()
             ->where('date_at', $request->get('start'))
@@ -130,5 +129,18 @@ class OlgaCalendarController extends Controller
         OlgaCalendarBlock::query()
             ->insert(['olga_calendar_day_id' => $dayId, 'start' => DB::Raw('Now()')]);
 
+        OlgaCalendarService::setSemaphore();
+
+    }
+
+    public function destroyBlocked(Request $request): void
+    {
+        OlgaCalendarService::pruneBlocks();
+
+        OlgaCalendarDay::query()
+            ->where('date_at', $request->get('start'))
+            ->delete();
+
+        OlgaCalendarService::setSemaphore();
     }
 }

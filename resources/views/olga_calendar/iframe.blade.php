@@ -57,7 +57,7 @@
     @endforeach
 
     <div id="form1" class="form">
-        <div class="close-button">&times;</div>
+        <div class="close-button" id="close-button1">&times;</div>
         <p id="form1date1" class="formdate"></p>
         <p>Выберите свободное время приема</p>
         <div id="grid">
@@ -70,7 +70,7 @@
     </div>
 
     <div id="form2" class="form">
-        <div class="close-button">&times;</div>
+        <div class="close-button" id="close-button2">&times;</div>
         <p id="form1date2" class="formdate"></p>
         <p id="times"></p>
         <form method="post" id="form2form" action="{{ route('olga.calendar.store.appointment') }}">
@@ -110,6 +110,7 @@
     const url = domain + '{{ route('olga.calendar.iframe.passed-after-last',[],false) }}';
     let pause = false; {{-- Для возможности остановки обновления при оформлении заявки --}}
     const blockUrl = '{{ route('olga.calendar.blocked',[],false) }}';
+    const blockDeleteUrl = '{{ route('olga.calendar.blocked.delete',[],false) }}';
     const _token='{{ csrf_token() }}';
 </script>
 
